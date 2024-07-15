@@ -13,8 +13,12 @@ function processor(transmission) {
     if (!rawData.endsWith('>')) {
         throw new Error('RawData is invalid ; should contain > at end')
     }
+    let id = Number(parts[0])
+    if (Number.isNaN(id)) {
+        throw new Error('id cannot be converted to number')
+    }
     return {
-        id: Number(parts[0]),
+        id: id,
         rawData: rawData
     };
 }
