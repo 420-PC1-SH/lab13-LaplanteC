@@ -29,7 +29,7 @@ describe("transmission processor", function () {
 
     describe("throws exception if rawData is missing < or >", function () {
         test("throws exception if rawData is missing < at start", function () {
-            const expectedError = new Error('Data is invalid ; should contain < at start');
+            const expectedError = new Error('RawData is invalid ; should contain < at start');
             expect(() => { processor("1410::932829840830053761>"); }).toThrow(expectedError);
         });
     });
