@@ -32,6 +32,10 @@ describe("transmission processor", function () {
             const expectedError = new Error('RawData is invalid ; should contain < at start');
             expect(() => { processor("1410::932829840830053761>"); }).toThrow(expectedError);
         });
+        test("throws exception if rawData is missing > at end", function () {
+            const expectedError = new Error('RawData is invalid ; should contain > at end');
+            expect(() => { processor("1410::<932829840830053761"); }).toThrow(expectedError);
+        });
     });
 
 });
