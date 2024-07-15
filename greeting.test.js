@@ -36,4 +36,10 @@ describe("greeting with name", function() {
         let result = greet(name);
         expect(result).toEqual("Hello, Jango and Boba");
     });
+
+    test("returns greeting to as many people if an array of 3 or more elements is passed", function() {
+        let name = ["Jill", "Jane", "Leia"];
+        let result = greet(name);
+        expect(result).toEqual("Hello, Jill, Jane, and Leia");
+    });
 });
