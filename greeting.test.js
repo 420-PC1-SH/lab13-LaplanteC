@@ -18,5 +18,10 @@ describe("greeting with name", function() {
             let result = greet(null);
             expect(result).toEqual("Hello, there");
         });
+        test("when name is empty, returns «Hello, there»", function() {
+            let name = "";
+            let result = greet(name);
+            expect(result).toEqual("Hello, there");
+        });
     });
 });
