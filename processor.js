@@ -7,6 +7,9 @@ function processor(transmission) {
     if (!rawData.startsWith('<')) {
         throw new Error('RawData is invalid ; should contain < at start')
     }
+    if (!rawData.endsWith('>')) {
+        throw new Error('RawData is invalid ; should contain > at end')
+    }
     return {
         id: Number(parts[0]),
         rawData: rawData
