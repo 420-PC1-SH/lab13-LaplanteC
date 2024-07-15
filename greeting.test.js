@@ -14,5 +14,9 @@ describe("greeting with name", function() {
             let result = greet(name);
             expect(result).toEqual("Hello, there");
         });
+        test("when name is null, returns «Hello, there»", function() {
+            let result = greet(null);
+            expect(result).toEqual("Hello, there");
+        });
     });
 });
