@@ -4,6 +4,9 @@ function processor(transmission) {
     }
     let parts = transmission.split("::");
     let rawData = parts[1];
+    if (!rawData.startsWith('<') && !rawData.endsWith('>')) {
+        throw new Error('RawData is invalid ; should contain < at start and > at end')
+    }
     if (!rawData.startsWith('<')) {
         throw new Error('RawData is invalid ; should contain < at start')
     }
