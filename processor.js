@@ -13,6 +13,9 @@ function processor(transmission) {
     if (!rawData.endsWith('>')) {
         throw new Error('RawData is invalid ; should contain > at end')
     }
+    if (Number.isNaN(Number(rawData.slice(1, -1)))) {
+        throw new Error('RawData is invalid ; can only contain numbers')
+    }
     let id = Number(parts[0])
     if (Number.isNaN(id)) {
         throw new Error('id cannot be converted to number')
