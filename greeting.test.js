@@ -24,4 +24,10 @@ describe("greeting with name", function() {
             expect(result).toEqual("Hello, there");
         });
     });
+
+    test("returns greeting in uppercase if name in uppercase", function() {
+        let name = "HAN";
+        let result = greet(name);
+        expect(result).toEqual("HELLO, HAN");
+    });
 });
