@@ -47,4 +47,9 @@ describe("transmission processor", function () {
         expect(() => { processor("idInStringFormat::<932829840830053761>"); }).toThrow(expectedError);
     });
 
+    test("throws exception if rawData contains NaN between < and >", function () {
+        const expectedError = new Error('RawData is invalid ; can only contain numbers');
+        expect(() => { processor("1410::<932829test30053761>"); }).toThrow(expectedError);
+    });
+
 });
