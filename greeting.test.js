@@ -30,4 +30,10 @@ describe("greeting with name", function() {
         let result = greet(name);
         expect(result).toEqual("HELLO, HAN");
     });
+
+    test("returns greeting to two people if an array of two elements is passed", function() {
+        let name = ["Jango", "Boba"];
+        let result = greet(name);
+        expect(result).toEqual("Hello, Jango and Boba");
+    });
 });
