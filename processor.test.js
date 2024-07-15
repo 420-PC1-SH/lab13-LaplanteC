@@ -42,4 +42,9 @@ describe("transmission processor", function () {
         });
     });
 
+    test("converts id to a number", function () {
+        const expectedError = new Error('id cannot be converted to number');
+        expect(() => { processor("idInStringFormat::<932829840830053761>"); }).toThrow(expectedError);
+    });
+
 });
